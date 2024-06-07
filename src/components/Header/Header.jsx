@@ -34,14 +34,14 @@ export default function Header() {
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
                 <div className="inline-flex items-center space-x-2">
                     <span>
-                        <img
+                        {/* <img
                             src="https://cdn-icons-png.flaticon.com/128/15686/15686981.png"
                             alt="logo"
                             height="40px"
                             width="40px"
-                        />
+                        /> */}
                     </span>
-                    <span className="font-bold">Shriyash Rulhe</span>
+                    <span className="header_heading">Shriyash Rulhe</span>
                 </div>
                 <div className="hidden lg:block">
                     <ul className="inline-flex space-x-8">
@@ -58,12 +58,10 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="hidden lg:block">
-                    <button
-                        type="button"
-                        className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    >
-                        Social
-                    </button>
+                    <Link to="/coffee"><button className='coffee_btn'>
+                        <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
+                        Buy me a coffee
+                    </button></Link>
                 </div>
                 <div className="lg:hidden">
                     <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
@@ -75,12 +73,12 @@ export default function Header() {
                                 <div className="flex items-center justify-between">
                                     <div className="inline-flex items-center space-x-2">
                                         <span>
-                                            <img
+                                            {/* <img
                                                 src="https://cdn-icons-png.flaticon.com/128/15686/15686981.png"
                                                 alt="logo"
                                                 height="40px"
                                                 width="40px"
-                                            />
+                                            /> */}
                                         </span>
                                         <span className="font-bold">Shriyash Rulhe</span>
                                     </div>
@@ -110,12 +108,10 @@ export default function Header() {
                                         ))}
                                     </nav>
                                 </div>
-                                <button
-                                    type="button"
-                                    className="mt-4 w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                >
-                                    Social
-                                </button>
+                                <Link to="/coffee"><button className='coffee_btn'>
+                                    <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
+                                    Buy me a coffee
+                                </button></Link>
                             </div>
                         </div>
                     </div>

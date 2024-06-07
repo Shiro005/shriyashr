@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&family=Lobster&display=swap');
 
-.custom_navbar{
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap');
+
+.custom_navbar {
     background-color: rgb(28, 28, 28);
     color: white;
 }
@@ -12,12 +16,12 @@
     color: #ededed;
 }
 
-.btn{
+.btn {
     background-color: rgba(255, 255, 255, 0.078);
     color: white;
 }
 
-.Navbar{
+.Navbar {
     border: 1px solid white;
     display: flex;
     flex-direction: row;
@@ -25,4 +29,31 @@
     justify-content: space-between;
     align-items: center;
 
+}
+
+.coffee_btn {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: "Pacifico", cursive;
+    /* font-family: "Lobster", sans-serif; */
+    color: rgb(18, 18, 18);
+    /* background-color: rgb(255, 198, 10); */
+    background-color: #F4A261;
+    align-items: center;
+}
+
+.coffee_btn img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.header_heading {
+    font-size: 1.4rem;
+    /* font-family: "Pacifico", cursive; */
+    font-family: "Lobster", sans-serif;
 }
