@@ -1,0 +1,28 @@
+.custom_about_container {
+    margin: auto;
+    width: 95%;
+    background-color: rgb(28, 28, 28);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.space-y-7{
+    width: 100%;
+    margin: 10px 20px;
+}
+
+.about_img{
+    width: 100%;
+}
+
+.about_img img {
+    border-radius: 200px;
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+    width: 300px;
+}

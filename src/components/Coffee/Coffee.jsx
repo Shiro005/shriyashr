@@ -94,11 +94,6 @@ export const Coffee = () => {
                     {showModal && (
                         <div className="w-[300px] rounded-md border my-4">
                             <span className="close" onClick={closeModal}>&times;</span>
-                            <img
-                                src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                                alt="Laptop"
-                                className="h-[200px] w-full rounded-t-md object-cover"
-                            />
                             <div className="p-4">
                                 <h1 className="inline-flex items-center text-lg font-semibold">
                                     Confirm Payment<ArrowUpRight className="h-4 w-4" />

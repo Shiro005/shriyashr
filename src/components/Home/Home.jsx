@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import 'tailwindcss/tailwind.css';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { Pagination } from '../pagination/Pagination';
 
 const Home = () => {
     const [font, setFont] = useState('Roboto');
@@ -99,6 +100,7 @@ const Home = () => {
                         </Link>
                     </motion.p>
                 </motion.div>
+                <Pagination result={"Home"} next={"/about"} prev={"/"}/>
             </motion.div>
         </div >
     );
