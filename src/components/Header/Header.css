@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&family=Lobster&display=swap');
+
+.custom_navbar{
+    background-color: rgb(28, 28, 28);
+    color: white;
+}
+
+.name_logo {
+    font-size: 1.7rem;
+    font-family: "Jacquard 24 Charted", system-ui;
+    padding: 10px;
+    color: #ededed;
+}
+
+.btn{
+    background-color: rgba(255, 255, 255, 0.078);
+    color: white;
+}
+
+.Navbar{
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
