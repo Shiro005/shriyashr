@@ -10,7 +10,7 @@ const menuItems = [
     },
     {
         name: 'About',
-        href: 'about',
+        href: '/about',
     },
     {
         name: 'Contact',
@@ -34,12 +34,12 @@ export default function Header() {
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
                 <div className="inline-flex items-center space-x-2">
                     <span>
-                        {/* <img
-                            src="https://cdn-icons-png.flaticon.com/128/15686/15686981.png"
+                        <img
+                            src=""
                             alt="logo"
                             height="40px"
                             width="40px"
-                        /> */}
+                        />
                     </span>
                     <span className="header_heading">Shriyash Rulhe</span>
                 </div>
@@ -96,15 +96,15 @@ export default function Header() {
                                 <div className="mt-6">
                                     <nav className="grid gap-y-4">
                                         {menuItems.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
                                             >
                                                 <span className="ml-3 text-base font-medium text-gray-900">
                                                     {item.name}
                                                 </span>
-                                            </a>
+                                            </Link>
                                         ))}
                                     </nav>
                                 </div>
