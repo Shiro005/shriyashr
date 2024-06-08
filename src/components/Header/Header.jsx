@@ -39,6 +39,7 @@ export default function Header() {
                             alt="logo"
                             height="40px"
                             width="40px"
+                            className='bg-green-500 rounded-full'
                         />
                     </span>
                     <span className="header_heading">Shriyash Rulhe</span>
