@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import './Header.css';
-import { Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react';
 
 const menuItems = [
     {
@@ -14,20 +14,20 @@ const menuItems = [
     },
     {
         name: 'Contact',
-        href: 'contact',
+        href: '/contact',
     },
     {
         name: 'Projects',
-        href: 'projects',
+        href: '/projects',
     },
-]
+];
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
         <div className="relative w-full bg-white">
@@ -35,7 +35,7 @@ export default function Header() {
                 <div className="inline-flex items-center space-x-2">
                     <span>
                         <img
-                            src=""
+                            src="https://avatars.githubusercontent.com/u/113467235?v=4"
                             alt="logo"
                             height="40px"
                             width="40px"
@@ -47,21 +47,23 @@ export default function Header() {
                     <ul className="inline-flex space-x-8">
                         {menuItems.map((item) => (
                             <li key={item.name}>
-                                <a
-                                    href={item.href}
+                                <NavLink
+                                    to={item.href}
                                     className="text-sm font-semibold text-gray-800 hover:text-gray-900"
                                 >
                                     {item.name}
-                                </a>
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="hidden lg:block">
-                    <Link to="/coffee"><button className='coffee_btn'>
-                        <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
-                        Buy me a coffee
-                    </button></Link>
+                    <Link to="/coffee">
+                        <button className='coffee_btn'>
+                            <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
+                            Buy me a coffee
+                        </button>
+                    </Link>
                 </div>
                 <div className="lg:hidden">
                     <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
@@ -96,22 +98,25 @@ export default function Header() {
                                 <div className="mt-6">
                                     <nav className="grid gap-y-4">
                                         {menuItems.map((item) => (
-                                            <Link
+                                            <NavLink
                                                 key={item.name}
                                                 to={item.href}
                                                 className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
+                                                onClick={toggleMenu}
                                             >
                                                 <span className="ml-3 text-base font-medium text-gray-900">
                                                     {item.name}
                                                 </span>
-                                            </Link>
+                                            </NavLink>
                                         ))}
                                     </nav>
                                 </div>
-                                <Link to="/coffee"><button className='coffee_btn'>
-                                    <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
-                                    Buy me a coffee
-                                </button></Link>
+                                <Link to="/coffee">
+                                    <button className='coffee_btn'>
+                                        <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
+                                        Buy me a coffee
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

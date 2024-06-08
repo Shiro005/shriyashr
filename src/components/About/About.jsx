@@ -87,7 +87,7 @@ export default function About() {
                 className="custom_about_container"
             >
                 <div className="about_img">
-                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Getting Started" className="rounded-lg" />
+                    <img src="https://avatars.githubusercontent.com/u/113467235?v=4" alt="Getting Started" className="rounded-lg" />
                 </div>
 
                 <div className="space-y-7">
