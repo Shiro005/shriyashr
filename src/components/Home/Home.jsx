@@ -106,7 +106,7 @@ const Home = () => {
                         </Link>
                     </motion.p>
                 </motion.div>
-                {/* <Pagination result={"Home"} next={"/about"} prev={"/"} /> */}
+                <Pagination result={"Home"} next={"/about"} prev={"/"} />
             </motion.div>
         </div>
     );

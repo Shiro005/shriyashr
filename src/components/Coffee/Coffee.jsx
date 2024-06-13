@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import './Coffee.css';
 import { ArrowRight } from 'lucide-react'
 import { ArrowUpRight } from 'lucide-react'
+import { Pagination } from '../pagination/Pagination';
 
 export const Coffee = () => {
     const [quantity, setQuantity] = useState(1);
@@ -85,7 +86,7 @@ export const Coffee = () => {
                         <button
                             type="button"
                             onClick={openModal}
-                            className="inline-flex items-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white hover:bg-black/80"
+                            className="inline-flex items-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white hover:bg-black/80 m-4"
                         >
                             Buy a Coffee for Shriyash
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -123,6 +124,7 @@ export const Coffee = () => {
                             </div>
                         </div>
                     )}
+                <Pagination result={"About"} next={"/"} prev={"/contact"} className='my-10 p-10' />
                 </div>
             </div>
         </>

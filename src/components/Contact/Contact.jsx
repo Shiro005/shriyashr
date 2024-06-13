@@ -146,7 +146,7 @@ export const Contact = () => {
             </motion.div>
           </div>
         </div>
-        <Pagination result={"About"} next={"/project"} prev={"/about"} className='my-10 p-10'/>
+        <Pagination result={"About"} next={"/coffee"} prev={"/projects"} className='my-10 p-10'/>
       </div>
     </>
   );
