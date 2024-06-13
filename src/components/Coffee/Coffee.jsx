@@ -79,7 +79,9 @@ export const Coffee = () => {
 
 
                     <div className="coffee_price">
-                        <h2>{totalAmount} ~rs</h2>
+                        <h2 className='text-sm font-semibold text-gray-800 hover:text-gray-900 m-4 flex flex-row'>
+                            <span><img src="https://cdn-icons-png.flaticon.com/128/9784/9784453.png" alt="" height={20} width={20} /></span>
+                            {totalAmount}</h2>
                         <button
                             type="button"
                             onClick={openModal}

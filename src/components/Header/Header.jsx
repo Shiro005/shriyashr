@@ -13,13 +13,13 @@ const menuItems = [
         href: '/about',
     },
     {
-        name: 'Contact',
-        href: '/contact',
-    },
-    {
         name: 'Projects',
         href: '/projects',
     },
+    {
+        name: 'Contact',
+        href: '/contact',
+    }
 ];
 
 export default function Header() {
@@ -39,7 +39,7 @@ export default function Header() {
                             alt="logo"
                             height="40px"
                             width="40px"
-                            className='bg-green-500 rounded-full'
+                            className='bg-white-500 rounded-full'
                         />
                     </span>
                     <span className="header_heading">Shriyash Rulhe</span>
@@ -49,8 +49,10 @@ export default function Header() {
                         {menuItems.map((item) => (
                             <li key={item.name}>
                                 <NavLink
-                                    to={item.href}
-                                    className="text-sm font-semibold text-gray-800 hover:text-gray-900"
+                                    className={({ isActive }) =>
+                                        `block py-2 pr-4 pl-3 duration-200 border-b
+                                    ${isActive ? 'text-orange-600' : 'text-gray-800'} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0 font-semibold`
+                                    } to={item.href}
                                 >
                                     {item.name}
                                 </NavLink>
@@ -102,8 +104,10 @@ export default function Header() {
                                             <NavLink
                                                 key={item.name}
                                                 to={item.href}
-                                                className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
-                                                onClick={toggleMenu}
+                                                className={({ isActive }) =>
+                                                    `block py-2 pr-4 pl-3 duration-200 border-b
+                                                ${isActive ? 'text-orange-700' : 'text-gray-700'} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                                }
                                             >
                                                 <span className="ml-3 text-base font-medium text-gray-900">
                                                     {item.name}

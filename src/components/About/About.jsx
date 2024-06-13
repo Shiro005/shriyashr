@@ -96,8 +96,8 @@ export default function About() {
                     <p className="text-3xl font-bold md:text-4xl">
                         Know About Me
                     </p>
-                    <p className="text-base text-gray-200 md:text-lg">
-                        Computer science student at <strong className='text-yellow-600'>Sant Gadge Baba Amravati University, Maharashtra</strong> , specializing in web development.  <strong className='text-yellow-600'>Founder of WebReich</strong>, a vibrant coding community with  <strong className='text-yellow-600'>150+ students.</strong> Proficient in full stack development with strong  <strong className='text-yellow-600'>leadership and communication </strong> skills. Eager to apply my expertise to impactful projects. Known for my effective  <strong className='text-yellow-600'> communication, problem-solving </strong> abilities, and dedication to fostering a collaborative learning environment.
+                    <p className="text-base text-gray-900 md:text-lg">
+                        Computer science student at <strong className='text-orange-600'>Sant Gadge Baba Amravati University, Maharashtra</strong> , specializing in web development.  <strong className='text-orange-600'>Founder of WebReich</strong>, a vibrant coding community with  <strong className='text-orange-600'>150+ students.</strong> Proficient in full stack development with strong  <strong className='text-orange-600'>leadership and communication </strong> skills. Eager to apply my expertise to impactful projects. Known for my effective  <strong className='text-orange-600'> communication, problem-solving </strong> abilities, and dedication to fostering a collaborative learning environment.
                     </p>
                 </div>
 
@@ -121,7 +121,7 @@ export default function About() {
 
                 <p className="text-sm font-semibold md:text-base mx-4">shriyashrulhe145@gmail.com</p>
                 <p className="mx-4 text-sm font-semibold md:text-base">Akola, Maharashtra 444-004</p>
-                <Pagination result={"About"} next={"/contact"} prev={"/"} />
+                <Pagination result={"About"} next={"/projects"} prev={"/"} />
             </motion.div>
         </>
     );

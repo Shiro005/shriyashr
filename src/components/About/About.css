@@ -1,8 +1,8 @@
 .custom_about_container {
     margin: auto;
     width: 95%;
-    background-color: rgb(28, 28, 28);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 17, 17);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

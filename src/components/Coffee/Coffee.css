@@ -27,7 +27,7 @@
 }
 
 .container_heading {
-    font-family: "Pacifico", cursive;
+    /* font-family: "Pacifico", cursive; */
     font-size: 2rem;
     font-weight: bold;
     color: rgb(35, 35, 35);
@@ -61,7 +61,7 @@
 .coffee_price h2 {
     font-size: 1.5rem;
     color: rgb(29, 29, 29);
-    font-family: "Pacifico", cursive;
+    /* font-family: "Pacifico", cursive; */
     margin: 10px;
 }
 

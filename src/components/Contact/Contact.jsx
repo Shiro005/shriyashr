@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Pagination } from '../pagination/Pagination';
 
 export const Contact = () => {
   const [messageSent, setMessageSent] = useState(false);
@@ -34,7 +35,7 @@ export const Contact = () => {
 
   return (
     <>
-      <div className="mx-auto max-w-7xl px-4 bg-gray-950 text-white">
+      <div className="mx-auto max-w-7xl px-4 bg-white text-gray-900 py-2">
         <div className="mx-auto max-w-7xl py-12 md:py-24">
           <div className="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
             <motion.div
@@ -145,6 +146,7 @@ export const Contact = () => {
             </motion.div>
           </div>
         </div>
+        <Pagination result={"About"} next={"/project"} prev={"/about"} className='my-10 p-10'/>
       </div>
     </>
   );
