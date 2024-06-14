@@ -102,3 +102,13 @@
     width: 30px;
     margin-right: 10px;
 }
+
+.customHome{
+    height: 300px;
+}
+
+.customHome h3{
+    height: 80px;
+    text-align: center;
+    margin-top: 10px;
+}

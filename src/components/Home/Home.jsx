@@ -52,11 +52,11 @@ const Home = () => {
                     variants={containerVariants}
                 >
                     <motion.div
-                        className="mb-10 bg-gray-100 p-5 rounded-lg shadow-lg"
+                        className="mb-10 bg-gray-100 p-5 rounded-lg shadow-lg customHome"
                         transition={{ duration: 0.5 }}
                     >
                         <motion.h3
-                            className="text-3xl md:text-5xl font-bold mb-4"
+                            className="text-3xl md:text-5xl font-bold"
                             style={{ fontFamily: font }}
                             initial={{ y: -50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}

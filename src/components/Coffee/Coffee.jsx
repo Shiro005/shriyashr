@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import './Coffee.css';
+import { Plus } from 'lucide-react'
+import { Minus } from 'lucide-react';
 import { ArrowRight } from 'lucide-react'
 import { ArrowUpRight } from 'lucide-react'
 import { Pagination } from '../pagination/Pagination';
@@ -36,12 +37,6 @@ export const Coffee = () => {
         setShowModal(false);
     };
 
-    // const handlePayment = () => {
-    //     const qrCodeAmount = totalAmount.toFixed(2);
-    //     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`upi://pay?pa=yourupiid@provider&pn=Your%20Name&mc=${totalAmount}&tn=${encodeURIComponent(note)}`)}`;
-    //     console.log('QR Code URL:', qrCodeUrl);
-    //     window.open(qrCodeUrl, '_blank');
-    // };
     const handlePayment = () => {
         const qrCodeAmount = totalAmount.toFixed(2);
         const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`upi://pay?pa=8668722207@axl&pn=Your%20Name&am=${qrCodeAmount}&tn=${encodeURIComponent(note)}`)}`;
@@ -61,11 +56,23 @@ export const Coffee = () => {
                         <div className='coffee_img'>
                             <img src="https://cdn-icons-png.flaticon.com/256/11471/11471245.png" alt="" />
                         </div>
-
+                        <h3 className='font-bold m-4 text-2xl'>Starting from 14rs/coffee</h3>
                         <div className="quantity_container">
-                            <button onClick={removeQuantity} className="quantity_button">-</button>
-                            <span className="quantity">{quantity}</span>
-                            <button onClick={addQuantity} className="quantity_button">+</button>
+                            <button
+                                type="button"
+                                onClick={removeQuantity}
+                                className="rounded-full bg-black px-3 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                <Minus className="h-4 w-4" />
+                            </button>
+                           <span className='quantity'>{quantity}</span>
+                            <button
+                                type="button"
+                                onClick={addQuantity}
+                                className="rounded-full bg-black px-3 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                <Plus className="h-4 w-4" />
+                            </button>
                         </div>
                     </div>
 
@@ -124,7 +131,7 @@ export const Coffee = () => {
                             </div>
                         </div>
                     )}
-                <Pagination result={"About"} next={"/"} prev={"/contact"} className='my-10 p-10' />
+                    <Pagination result={"About"} next={"/"} prev={"/contact"} className='my-10 p-10' />
                 </div>
             </div>
         </>
