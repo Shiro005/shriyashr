@@ -51,7 +51,7 @@ export default function Header() {
                                 <NavLink
                                     className={({ isActive }) =>
                                         `block py-2 pr-4 pl-3 duration-200 border-b
-                                    ${isActive ? 'text-orange-600' : 'text-gray-800'} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0 font-semibold`
+                                    ${isActive ? 'text-orange-600 font-bold' : 'text-gray-800'} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0 font-semibold`
                                     } to={item.href}
                                 >
                                     {item.name}
