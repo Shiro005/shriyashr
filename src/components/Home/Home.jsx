@@ -73,7 +73,7 @@ const Home = () => {
                             <span className='text-gray-900 font-bold'>Full Stack Web Developer | </span>
                             <span className='text-gray-900 font-bold'>Expanding - WebReich | </span>
                             <span className='text-gray-900 font-bold'>Content Creator | </span>
-                            <span className='text-blue-800 font-bold'>Looking for Job</span>
+                            <span className='text-blue-800 font-bold'>Looking for Opportunity</span>
                         </motion.h4>
                         <div className="flex justify-center flex-wrap gap-4">
                             <motion.button
