@@ -9,19 +9,19 @@ export function Projects() {
             title: 'WebReich Community',
             description: 'For Solve Realtime problem Purpose (Education Sector)',
             Technologies: ['HTML', 'CSS', 'Vanilla Js', 'Node Js', 'SQL', 'API', 'Git', 'Github'],
-            logo: 'https://cdn-icons-png.flaticon.com/128/9856/9856433.png',
+            logo: 'https://cdn-icons-png.flaticon.com/128/4121/4121044.png',
             key_features: 'Used by 150+ students',
             github_code: 'https://github.com/Shiro005/vercelHost.git',
-            live_link: 'https://webreich.vercel.app/'
+            live_link: 'https://webreichedu.vercel.app/'
         },
         {
-            title: 'Currency Converter',
-            description: 'React Js Application better UI/UX design and frontend tech',
+            title: 'Web Terminal',
+            description: 'React Js Application better understading and frontend tech',
             Technologies: ['React Js', 'API', 'Git', 'Github'],
-            logo: 'https://cdn-icons-png.flaticon.com/128/9798/9798009.png',
-            key_features: 'Fetch live data from API and used in application using custom hooks in react js according to user requirements',
-            github_code: 'https://github.com/Shiro005/React_Js-/tree/main/07currencyConverter',
-            live_link: 'https://webreich.vercel.app/'
+            logo: 'https://cdn-icons-png.flaticon.com/128/7560/7560719.png',
+            key_features: 'Fetch anyone github data by using custom commands by using github APIs',
+            github_code: 'https://github.com/Shiro005/CustomTerminal.git',
+            live_link: 'https://custom-terminal.vercel.app/'
         },
         {
             title: 'Password Generator',
@@ -30,7 +30,7 @@ export function Projects() {
             logo: 'https://cdn-icons-png.flaticon.com/128/3914/3914500.png',
             key_features: 'Random password generator with every refresh, allowed numbers characters, symbols with user requirements',
             github_code: 'https://github.com/Shiro005/React_Js-/tree/main/06PasswordGenerator',
-            live_link: 'https://webreich.vercel.app/'
+            live_link: 'https://password-generator-web-reich.vercel.app/'
         }
     ];
 
@@ -66,7 +66,7 @@ export function Projects() {
                 </motion.p>
                 <hr className="my-4" />
                 <motion.div
-                    className="flex flex-row flex-wrap items-center justify-around"
+                    className="flex flex-col flex-wrap items-center justify-around"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
@@ -74,7 +74,7 @@ export function Projects() {
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            className="space-y-3 border-3 my-4 flex flex-wrap items-center content-around flex-col bg-gray-200 p-4"
+                            className="space-y-3 border-3  my-4 flex flex-wrap items-center content-around flex-col bg-gray-100 p-4 shadow-md"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 + 0.8 }}
@@ -104,6 +104,16 @@ export function Projects() {
                                     transition={{ duration: 0.3 }}
                                 >
                                     Github Code 
+                                </motion.button>
+                            </a>
+                            <a href={project.live_link}>
+                                <motion.button
+                                    type="button"
+                                    className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    Live Link
                                 </motion.button>
                             </a>
                         </motion.div>

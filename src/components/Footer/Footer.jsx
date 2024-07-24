@@ -50,7 +50,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="text-center mt-4">
-                    <p>&copy; 2024 Shriyash Portfolio. All rights reserved.</p>
+                    {/* <p>&copy; 2024 Shriyash Portfolio. All rights reserved.</p> */}
                 </div>
             </div>
         </footer>

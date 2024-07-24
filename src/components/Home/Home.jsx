@@ -5,7 +5,7 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import { Pagination } from '../pagination/Pagination';
 
-import resume from '../../assets/shriyash_resume.pdf';
+import resume from '../../assets/shriyashWEB.pdf';
 
 const Home = () => {
     const [font, setFont] = useState('Comfortaa');
@@ -52,8 +52,8 @@ const Home = () => {
                     variants={containerVariants}
                 >
                     <motion.div
-                        className="mb-10 bg-gray-100 p-5 rounded-lg shadow-lg customHome"
-                        transition={{ duration: 0.5 }}
+                        className="mb-10 p-5 rounded-lg customHome"
+                        transition={{ duration: 1 }}
                     >
                         <motion.h3
                             className="text-3xl md:text-5xl font-bold"
