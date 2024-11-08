@@ -35,16 +35,20 @@ const Home = () => {
         {
             question: "What Problem Does WebReich Solve?",
             answer: (<>
-                <p>In India, students and professionals face a critical problem: the rapidly evolving <strong className='text-gray-800'> tech ecosystem combined with an overwhelming amount of fragmented knowledge.</strong> Many individuals are unaware of the latest trends and upcoming technologies, leading to confusion and a lack of direction in their learning paths. Traditional educational systems and resources fail to keep up with these changes, leaving learners without proper guidance to stay relevant in the tech industry WebReich addresses this by using AI to filter and analyze vast amounts of information, providing users with personalized, actionable learning paths.The platform simplifies complex topics, helping students and working professionals navigate through the noise and stay updated on cutting- edge technologies like AI and machine learning.Additionally, WebReich connects users with a community of like - minded individuals, offering mentorship and collaborative opportunities to build real - world skills By solving the problem of knowledge overload and lack of awareness about emerging technologies, WebReich empowers users to learn efficiently, stay relevant, and contribute meaningfully to the future of tech</p>
+               In India, students and professionals face an <strong className='text-gray-800'>overwhelming tech landscape with fragmented knowledge.</strong> Many lack direction and awareness of emerging trends due to the <strong className='text-gray-800'>gap in traditional education systems.</strong> WebReich tackles this by using AI to filter information and provide clear, personalized learning paths and free learning resources by top mentors on internet and provides network supports. It connects users with a supportive community for mentorship and collaboration, helping them stay current, gain practical skills, and make real-world contributions in tech.
             </>)
         },
         {
-            question: "Our Mission",
-            answer: "To empower businesses of all sizes by creating tools that enhance productivity, streamline operations, and make digital transformation accessible and effective."
+            question: "What is Our Mission?",
+            answer: (<>
+                <strong className='text-gray-800'>To empower students and professionals in India by providing clear, AI-driven pathways through the overwhelming tech landscape.</strong> WebReich is dedicated to making emerging technologies accessible, helping users build relevant skills, connect with a community, and confidently contribute to the tech industry.
+             </>)
         },
         {
-            question: "Our Vision",
-            answer: "To be a leader in web development innovation, fostering a future where technology is seamlessly integrated into daily business processes, creating more opportunities for growth."
+            question: "What is Our Vision?",
+            answer: (<>
+                <strong className='text-gray-800'>To be India’s leading platform for tech education and collaboration, bridging knowledge gaps and enabling users to thrive in the rapidly evolving tech ecosystem.</strong> Through personalized guidance, mentorship, and community support, WebReich aims to create a generation of skilled, innovative, and industry-ready tech professionals.
+             </>)
         }
     ];
 
