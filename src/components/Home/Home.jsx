@@ -1,121 +1,135 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import 'tailwindcss/tailwind.css';
-import './Home.css';
 import { Link } from 'react-router-dom';
-import { Pagination } from '../pagination/Pagination';
-
 import resume from '../../assets/shriyashWEB.pdf';
 
 const Home = () => {
     const [font, setFont] = useState('Comfortaa');
+    const [expandedQuestion, setExpandedQuestion] = useState(null);
 
     useEffect(() => {
-        const fonts = [
-            'Roboto', 'Lobster', 'Courier New', 'Brush Script MT', 'Comic Sans MS',
-            'Lucida Console', 'Impact', 'Times New Roman', 'Trebuchet MS', 'Verdana',
-            'Georgia', 'Arial Black', 'Palatino', 'Garamond', 'Bookman',
-            'Dancing Script', 'Abril Fatface', 'Cinzel', 'Amatic SC', 'Caveat',
-            'Shadows Into Light', 'Comfortaa', 'Indie Flower', 'Varela Round'
-        ];
-
+        const fonts = ['Roboto', 'Comfortaa', 'Abril Fatface', 'Lobster'];
         const intervalId = setInterval(() => {
             const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
             setFont(randomFont);
-            console.log(randomFont)
         }, 400);
-
         return () => clearInterval(intervalId);
     }, []);
 
+    const toggleQuestion = (index) => {
+        setExpandedQuestion(expandedQuestion === index ? null : index);
+    };
+
     const containerVariants = {
         hidden: { opacity: 0, y: -50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { delay: 0.5, duration: 1 }
-        }
+        visible: { opacity: 1, y: 0, transition: { delay: 0.5, duration: 1 } }
     };
 
-    const itemVariants = {
-        hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+    const faqVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.6 } }
     };
+
+    const faqData = [
+        {
+            question: "What Problem Does WebReich Solve?",
+            answer: (<>
+                <p>In India, students and professionals face a critical problem: the rapidly evolving <strong className='text-gray-800'> tech ecosystem combined with an overwhelming amount of fragmented knowledge.</strong> Many individuals are unaware of the latest trends and upcoming technologies, leading to confusion and a lack of direction in their learning paths. Traditional educational systems and resources fail to keep up with these changes, leaving learners without proper guidance to stay relevant in the tech industry WebReich addresses this by using AI to filter and analyze vast amounts of information, providing users with personalized, actionable learning paths.The platform simplifies complex topics, helping students and working professionals navigate through the noise and stay updated on cutting- edge technologies like AI and machine learning.Additionally, WebReich connects users with a community of like - minded individuals, offering mentorship and collaborative opportunities to build real - world skills By solving the problem of knowledge overload and lack of awareness about emerging technologies, WebReich empowers users to learn efficiently, stay relevant, and contribute meaningfully to the future of tech</p>
+            </>)
+        },
+        {
+            question: "Our Mission",
+            answer: "To empower businesses of all sizes by creating tools that enhance productivity, streamline operations, and make digital transformation accessible and effective."
+        },
+        {
+            question: "Our Vision",
+            answer: "To be a leader in web development innovation, fostering a future where technology is seamlessly integrated into daily business processes, creating more opportunities for growth."
+        }
+    ];
 
     return (
-        <>
-            <div className="flex flex-col items-center justify-center bg-white min-h-full py-16 px-4">
-                <motion.div
-                    className="w-full max-w-3xl mx-auto text-center"
-                    initial="hidden"
-                    animate="visible"
-                    variants={containerVariants}
-                >
-                    <motion.div
-                        className="mb-10 p-5 rounded-lg customHome"
-                        transition={{ duration: 1 }}
+        <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4 py-8">
+            {/* Main Section */}
+            <motion.div
+                className="text-center bg-white rounded-lg shadow-lg p-8 w-full max-w-6xl mb-8"
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+            >
+                <motion.h3 className="text-3xl font-bold py-4" style={{ fontFamily: font }}>
+                    How can I help You?
+                </motion.h3>
+                <motion.h4 className="text-lg font-semibold mb-6 text-gray-800">
+                    Founder of WebReich | Full Stack Web Developer | Learning AI And LLM
+                </motion.h4>
+                <div className="flex justify-center flex-wrap gap-4 mb-6">
+                    <motion.a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=shriyashrulhe145@gmail.com&su=Connect%20Me&body=Hi%2C%20I%20would%20like%20to%20connect%20with%20you."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gray-900 text-white py-2 px-4 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out"
                     >
-                        <motion.h3
-                            className="text-3xl md:text-5xl font-bold"
-                            style={{ fontFamily: font }}
-                            initial={{ y: -50, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            How can I help You?
-                        </motion.h3>
-                        <motion.h4
-                            className="text-lg md:text-xl mb-8"
-                            initial={{ x: -100, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <span className='text-gray-900 font-bold'>Full Stack Web Developer | </span>
-                            <span className='text-gray-900 font-bold'>Expanding - WebReich | </span>
-                            <span className='text-gray-900 font-bold'>Content Creator | </span>
-                            <span className='text-blue-800 font-bold'>Looking for Opportunity</span>
-                        </motion.h4>
-                        <div className="flex justify-center flex-wrap gap-4">
-                            <motion.button
-                                className="bg-gray-900 text-white py-2 px-4 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out"
-                                whileHover={{ scale: 1.1 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                Hire Me
-                            </motion.button>
-                            <motion.a
-                                href={resume}
-                                download="resume.pdf"
-                                className="bg-white text-black py-2 px-4 rounded-full hover:bg-gray-300 transition duration-300 ease-in-out"
-                                transition={{ duration: 0.3 }}
-                            >
-                                View Resume
-                            </motion.a>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        className="mt-8"
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 1, duration: 0.5 }}
+                        Connect Me
+                    </motion.a>
+                    <motion.a
+                        href={resume}
+                        download="resume.pdf"
+                        className="bg-white text-black py-2 px-4 rounded-full hover:bg-gray-300 transition duration-300 ease-in-out"
                     >
-                        <motion.p className="text-lg">
-                            <Link to="/coffee">
-                                <motion.button
-                                    className='coffee_btn transition duration-300 ease-in-out'
-                                    whileHover={{ scale: 1.1 }}
+                        View Resume
+                    </motion.a>
+                </div>
+            </motion.div>
+
+            {/* WebReich Intro Section */}
+            <motion.div
+                className="bg-white shadow-lg rounded-lg p-6 w-full max-w-6xl text-left"
+                initial="hidden"
+                animate="visible"
+                variants={faqVariants}
+            >
+                <img
+                    src="https://github.com/Shiro005/WebReich-Services/blob/main/src/assets/webreich_logo1.png?raw=true"
+                    alt="WebReich Logo"
+                    className="mb-4 w-28 h-10"
+                />
+                <h2 className="text-2xl font-bold mb-4">Introducing WebReich Transforming Tech Education with AI-Driven Guidance for Students and Professionals</h2>
+                <p className="text-gray-700 mb-6">
+                    WebReich is an AI-powered coding community and social platform built to simplify tech learning for students, professionals, and enthusiasts, helping them navigate the overwhelming and fragmented information in today’s tech landscape. Our platform addresses key challenges in India’s education system: information overload, a lack of awareness about emerging technologies, and the absence of structured guidance for individuals looking to contribute to or participate in the latest tech trends.
+                </p>
+
+                <div className="space-y-4">
+                    {faqData.map((item, index) => (
+                        <div key={index} className="bg-gray-50 rounded-lg shadow-sm p-4">
+                            <button
+                                onClick={() => toggleQuestion(index)}
+                                className="flex justify-between items-center w-full text-left text-lg font-semibold text-gray-900 focus:outline-none"
+                            >
+                                {item.question}
+                                <motion.span
+                                    animate={{ rotate: expandedQuestion === index ? 180 : 0 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="Buy me a coffee" />
-                                    Buy me a coffee
-                                </motion.button>
-                            </Link>
-                        </motion.p>
-                    </motion.div>
-                </motion.div>
-                <Pagination result={"Home"} next={"/about"} prev={"/"} />
-            </div>
-        </>
+                                    ▼
+                                </motion.span>
+                            </button>
+                            {expandedQuestion === index && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="mt-2 text-gray-700"
+                                >
+                                    {item.answer}
+                                </motion.div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
+        </div>
     );
 };
 

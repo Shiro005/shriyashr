@@ -97,7 +97,7 @@ export default function About() {
                         Know About Me
                     </p>
                     <p className="text-base text-gray-900 md:text-lg">
-                        Computer science student at <strong className='text-orange-600'>Sant Gadge Baba Amravati University, Maharashtra</strong> , specializing in web development.  <strong className='text-orange-600'>Founder of WebReich</strong>, a vibrant coding community with  <strong className='text-orange-600'>150+ students.</strong> Proficient in full stack development with strong  <strong className='text-orange-600'>leadership and communication </strong> skills. Eager to apply my expertise to impactful projects. Known for my effective  <strong className='text-orange-600'> communication, problem-solving </strong> abilities, and dedication to fostering a collaborative learning environment.
+                    Computer Science student at Sant Gadge Baba Amravati University and founder of Web Reich, a 250+ member coding community. I am a full-stack developer with strong leadership, communication, and problem-solving skills, dedicated to creating impactful, user-friendly solutions that address real societal needs. Passionate about emerging technologies, including AI and LLM, I continuously seek opportunities to automate and enhance real-world processes, transforming ideas into valuable software products.
                     </p>
                 </div>
 
