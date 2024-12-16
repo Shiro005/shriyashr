@@ -42,7 +42,7 @@ export default function Header() {
                             className='bg-white-500 rounded-full'
                         />
                     </span>
-                    <span className="header_heading">Shriyash Rulhe</span>
+                    <span className="header_heading">Shriyash Rulhe & Sai Thakare</span>
                 </div>
                 <div className="hidden lg:block">
                     <ul className="inline-flex space-x-8">
