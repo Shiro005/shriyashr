@@ -94,9 +94,9 @@ const Home = () => {
                 variants={faqVariants}
             >
                 <img
-                    src="https://github.com/Shiro005/WebReich-Services/blob/main/src/assets/webreich_logo1.png?raw=true"
+                    src="/logo.png"
                     alt="WebReich Logo"
-                    className="mb-4 w-28 h-10"
+                    className="mb-4 w-16 h-16"
                 />
                 <h2 className="text-2xl font-bold mb-4">Introducing WebReich Transforming Tech Education with AI-Driven Guidance for Students and Professionals</h2>
                 <p className="text-gray-700 mb-6">
