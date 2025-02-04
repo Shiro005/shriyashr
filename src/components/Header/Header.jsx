@@ -1,25 +1,13 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink, Link } from 'react-router-dom';
-import './Header.css';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Coffee } from 'lucide-react';
 
 const menuItems = [
-    {
-        name: 'Home',
-        href: '/',
-    },
-    {
-        name: 'About',
-        href: '/about',
-    },
-    {
-        name: 'Projects',
-        href: '/projects',
-    },
-    {
-        name: 'Contact',
-        href: '/contact',
-    }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Contact', href: '/contact' }
 ];
 
 export default function Header() {
@@ -29,104 +17,142 @@ export default function Header() {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const menuVariants = {
+        hidden: { opacity: 0, x: '100%' },
+        visible: { 
+            opacity: 1, 
+            x: 0,
+            transition: { 
+                type: 'tween',
+                duration: 0.3 
+            }
+        },
+        exit: { 
+            opacity: 0, 
+            x: '100%',
+            transition: { 
+                type: 'tween',
+                duration: 0.2 
+            }
+        }
+    };
+
     return (
-        <div className="relative w-full bg-white shadow-lg">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-                <div className="inline-flex items-center space-x-2">
-                    <span>
-                        <img
-                            src="https://avatars.githubusercontent.com/u/113467235?v=4"
-                            alt="logo"
-                            height="40px"
-                            width="40px"
-                            className='bg-white-500 rounded-full'
-                        />
-                    </span>
-                    <span className="header_heading">Shriyash Rulhe</span>
+        <motion.nav 
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
+        >
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+                {/* Logo Section */}
+                <div className="flex items-center space-x-3">
+                    <img
+                        src="https://avatars.githubusercontent.com/u/113467235?v=4"
+                        alt="Shriyash Rulhe"
+                        className="w-10 h-10 rounded-full"
+                    />
+                    <span className="text-xl font-bold text-gray-900">Shriyash R. Rulhe</span>
                 </div>
-                <div className="hidden lg:block">
-                    <ul className="inline-flex space-x-8">
-                        {menuItems.map((item) => (
-                            <li key={item.name}>
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b
-                                    ${isActive ? 'text-orange-600 font-bold' : 'text-gray-800'} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0 font-semibold`
-                                    } to={item.href}
-                                >
-                                    {item.name}
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="hidden lg:block">
+
+                {/* Desktop Navigation */}
+                <div className="hidden lg:flex items-center space-x-8">
+                    {menuItems.map((item) => (
+                        <NavLink
+                            key={item.name}
+                            to={item.href}
+                            className={({ isActive }) => `
+                                text-base font-medium transition-colors duration-300
+                                ${isActive 
+                                    ? 'text-orange-500 font-bold' 
+                                    : 'text-gray-700 hover:text-orange-500'
+                                }`
+                            }
+                        >
+                            {item.name}
+                        </NavLink>
+                    ))}
                     <Link to="/coffee">
-                        <button className='coffee_btn'>
-                            <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
-                            Buy me a coffee
-                        </button>
+                        <motion.button 
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex items-center space-x-2 bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition-colors"
+                        >
+                            <Coffee size={18} />
+                            <span>Buy me a Coffee</span>
+                        </motion.button>
                     </Link>
                 </div>
+
+                {/* Mobile Menu Toggle */}
                 <div className="lg:hidden">
-                    <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
+                    <motion.button 
+                        whileTap={{ scale: 0.9 }}
+                        onClick={toggleMenu}
+                        className="text-gray-700 focus:outline-none"
+                    >
+                        <Menu size={24} />
+                    </motion.button>
                 </div>
-                {isMenuOpen && (
-                    <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
-                        <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                            <div className="px-5 pb-6 pt-5">
-                                <div className="flex items-center justify-between">
-                                    <div className="inline-flex items-center space-x-2">
-                                        <span>
-                                            {/* <img
-                                                src="https://cdn-icons-png.flaticon.com/128/15686/15686981.png"
-                                                alt="logo"
-                                                height="40px"
-                                                width="40px"
-                                            /> */}
-                                        </span>
-                                        <span className="font-bold">Shriyash Rulhe</span>
-                                    </div>
-                                    <div className="-mr-2">
-                                        <button
-                                            type="button"
+
+                {/* Mobile Menu */}
+                <AnimatePresence>
+                    {isMenuOpen && (
+                        <motion.div
+                            variants={menuVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            className="fixed inset-0 bg-white z-50 lg:hidden"
+                        >
+                            <div className="p-6">
+                                <div className="flex justify-between items-center mb-8">
+                                    <span className="text-2xl font-bold text-gray-900">Menu</span>
+                                    <motion.button 
+                                        whileTap={{ scale: 0.9 }}
+                                        onClick={toggleMenu}
+                                        className="text-gray-700"
+                                    >
+                                        <X size={24} />
+                                    </motion.button>
+                                </div>
+                                <nav className="space-y-4">
+                                    {menuItems.map((item) => (
+                                        <NavLink
+                                            key={item.name}
+                                            to={item.href}
                                             onClick={toggleMenu}
-                                            className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                            className={({ isActive }) => `
+                                                block py-3 text-xl transition-colors duration-300
+                                                ${isActive 
+                                                    ? 'text-orange-500 font-bold' 
+                                                    : 'text-gray-700 hover:text-orange-500'
+                                                }`
+                                            }
                                         >
-                                            <span className="sr-only">Close menu</span>
-                                            <X className="h-6 w-6" aria-hidden="true" />
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="mt-6">
-                                    <nav className="grid gap-y-4">
-                                        {menuItems.map((item) => (
-                                            <NavLink
-                                                key={item.name}
-                                                to={item.href}
-                                                className={({ isActive }) =>
-                                                    `block py-2 pr-4 pl-3 duration-200 border-b
-                                                ${isActive ? 'text-orange-700' : 'text-gray-700'} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                                }
-                                            >
-                                                <span className="ml-3 text-base font-medium text-gray-900">
-                                                    {item.name}
-                                                </span>
-                                            </NavLink>
-                                        ))}
-                                    </nav>
-                                </div>
-                                <Link to="/coffee">
-                                    <button className='coffee_btn'>
-                                        <img src="https://cdn-icons-png.flaticon.com/256/12125/12125073.png" alt="" />
-                                        Buy me a coffee
-                                    </button>
-                                </Link>
+                                            {item.name}
+                                        </NavLink>
+                                    ))}
+                                    <Link 
+                                        to="/coffee" 
+                                        onClick={toggleMenu}
+                                        className="block"
+                                    >
+                                        <motion.button 
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="w-full flex items-center justify-center space-x-3 bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-colors"
+                                        >
+                                            <Coffee size={22} />
+                                            <span className="text-lg">Buy me a Coffee</span>
+                                        </motion.button>
+                                    </Link>
+                                </nav>
                             </div>
-                        </div>
-                    </div>
-                )}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
-        </div>
+        </motion.nav>
     );
 }
